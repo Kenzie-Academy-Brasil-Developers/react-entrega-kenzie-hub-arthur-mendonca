@@ -37,6 +37,13 @@ export const StyledDiv = styled.div`
       align-items: flex-start;
       gap: 1rem;
 
+      p {
+        color: #fbea85;
+      }
+
+      label {
+        font-size: 1.3rem;
+      }
       input {
         border: none;
         border-radius: 5px;
@@ -52,11 +59,12 @@ export const StyledDiv = styled.div`
       width: inherit;
       border: none;
       border-radius: 5px;
-      height: 2.7rem;
+      font-size: 1.5rem;
       background-color: var(--color-primary-negative);
       color: white;
       margin-top: 1.5rem;
       width: 100%;
+      height: 5rem;
     }
 
     button:hover {
@@ -64,8 +72,23 @@ export const StyledDiv = styled.div`
       background-color: var(--color-primary-focus);
     }
 
+    .select__label {
+      font-size: 1.5rem;
+    }
     select {
       width: 100%;
     }
+  }
+
+  @media (min-width: 1439px) {
+    max-width: 25%;
+  }
+
+  @media (min-width: 899px) {
+    width: 30%;
+  }
+
+  @media (min-width: 426px) {
+    width: 50%;
   }
 `;

@@ -15,7 +15,7 @@ function Register() {
   async function registerUSer(formData) {
     try {
       const response = await api.post("/users", formData);
-      console.log(response.data);
+      // console.log(response.data);
       navigate("/");
     } catch (error) {
       console.log(error);

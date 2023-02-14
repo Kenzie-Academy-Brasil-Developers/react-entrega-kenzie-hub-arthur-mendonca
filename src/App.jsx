@@ -20,7 +20,6 @@ function App() {
       localStorage.setItem("@userId", JSON.stringify(response.data.user.id));
       setUser([]);
       setUser(response.data.user);
-      console.log(user);
       navigate("/dashboard");
     } catch (error) {
       console.log(error);

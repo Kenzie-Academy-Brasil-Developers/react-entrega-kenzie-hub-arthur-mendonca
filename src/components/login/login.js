@@ -8,10 +8,15 @@ export const StyledPageWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 3rem;
+  justify-content: center;
 `;
 
 export const StyledHeader = styled.header`
   color: var(--color-primary);
+
+  h1 {
+    font-size: 3.6rem;
+  }
 `;
 
 export const StyledSection = styled.section`
@@ -29,17 +34,25 @@ export const StyledSection = styled.section`
     padding: 2em;
     gap: 1rem;
     width: 100%;
+    height: 56vh;
+    justify-content: center;
+
+    h2 {
+      font-size: 2rem;
+    }
 
     .formDiv {
       width: inherit;
       align-items: center;
+
       label {
         align-self: flex-start;
+        font-size: 1.5rem;
       }
       input {
         border: none;
         border-radius: 5px;
-        height: 2.7rem;
+        height: 5rem;
         width: inherit;
         padding: 0 5px;
         background-color: var(--grey3);
@@ -64,10 +77,11 @@ export const StyledSection = styled.section`
         width: inherit;
         border: none;
         border-radius: 5px;
-        height: 2.7rem;
+        height: 5rem;
         background-color: var(--color-primary);
         color: white;
         margin-top: 1.5rem;
+        font-size: 1.5rem;
       }
     }
 
@@ -90,12 +104,21 @@ export const StyledSection = styled.section`
         display: flex;
         align-items: center;
         justify-content: center;
+        height: 5rem;
+        font-size: 1.5rem;
       }
     }
   }
 
+  @media (min-width: 1439px) {
+    max-width: 22%;
+  }
+
+  @media (min-width: 899px) {
+    width: 20%;
+  }
+
   @media (min-width: 426px) {
-    width: 40vw;
-    /* background-color: blue; */
+    width: 40%;
   }
 `;
