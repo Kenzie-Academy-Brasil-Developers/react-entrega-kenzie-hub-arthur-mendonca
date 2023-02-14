@@ -54,9 +54,9 @@ function RegisterForm({ registerUSer }) {
           <input type="text" id="contato" {...register("contact")} />
           {errors.contact && <p>Contato deve ser um número</p>}
         </div>
-        <label htmlFor="course_module" className="select__label">
-          Selecionar módulo
-        </label>
+        <div className="select__label">
+          <label htmlFor="course_module">Selecionar módulo</label>
+        </div>
         <div className="input__div">
           <select
             name="course_module"

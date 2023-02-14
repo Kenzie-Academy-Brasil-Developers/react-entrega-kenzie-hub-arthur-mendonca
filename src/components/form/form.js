@@ -73,10 +73,18 @@ export const StyledDiv = styled.div`
     }
 
     .select__label {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
+      display: flex;
+      width: 100%;
     }
     select {
       width: 100%;
+      border: none;
+      border-radius: 5px;
+      height: 3.5rem;
+      padding: 7px;
+      background-color: var(--grey3);
+      color: white;
     }
   }
 
