@@ -28,7 +28,9 @@ function MainColumn() {
   return (
     <StyledDiv>
       {open && <AddNewTech />}
+
       {modalUpdateOpen && <UpdateTech />}
+
       <header>
         <h1>Tecnologias</h1>
         <button>

@@ -3,6 +3,8 @@ import { useContext } from "react";
 import { TechContext } from "../../context/techContext/techContext";
 import { CgClose } from "react-icons/cg";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { formSchema } from "./formSchema";
 
 function AddNewTech() {
   const { handleClose, addNewTech } = useContext(TechContext);
@@ -11,7 +13,9 @@ function AddNewTech() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(formSchema),
+  });
 
   function submit(formData) {
     addNewTech(formData);
@@ -32,7 +36,7 @@ function AddNewTech() {
               placeholder="Nome da tecnologia"
               {...register("title")}
             />
-            {errors.title && <p>{errors.title.message}</p>}
+            {errors.title && <span>{errors.title.message}</span>}
           </div>
           <div className="third__div">
             <label htmlFor="">Status</label>
@@ -42,7 +46,7 @@ function AddNewTech() {
               <option value="Intermediário">Intermediário</option>
               <option value="Avançado">Avançado</option>
             </select>
-            {/* {errors.status && <p> {errors.status.message}</p>} */}
+            {errors.status && <span> {errors.status.message}</span>}
           </div>
           <button type="submit">Cadastrar nova tecnologia</button>
         </form>

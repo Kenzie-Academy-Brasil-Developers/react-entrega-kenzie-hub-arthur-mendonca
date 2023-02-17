@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { CreateUserToast } from "../../components/toasts/create-user-toast";
 import { api } from "../../services/api";
 import { TechContext } from "../techContext/techContext";
 
@@ -37,9 +38,8 @@ function UserProvider({ children }) {
       console.log(response.data);
       localStorage.setItem("@token", response.data.token);
       localStorage.setItem("@userId", response.data.user.id);
-      // localStorage.setItem("@userData", JSON.stringify(response.data));
       setUser([]);
-      setUser(response.data.user);
+      // setUser(response.data.user);
       navigate("/dashboard");
     } catch (error) {
       console.log(error);
@@ -50,6 +50,7 @@ function UserProvider({ children }) {
     try {
       const response = await api.post("/users", formData);
       // console.log(response.data);
+      CreateUserToast();
       navigate("/");
     } catch (error) {
       console.log(error);

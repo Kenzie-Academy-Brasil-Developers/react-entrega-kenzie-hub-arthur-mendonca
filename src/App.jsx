@@ -1,13 +1,12 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import Globalstyle from "./components/styles/globalstyle";
 import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import Login from "./components/login";
 import Register from "./components/register";
 import Dashboard from "./components/dashboard";
-import { api } from "./services/api";
 import ProtectedRoute from "./components/protectedRoute";
-import UserProvider from "./context/userContext/userContext";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -15,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <Globalstyle />
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="register" element={<Register />} />
