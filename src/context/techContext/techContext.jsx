@@ -11,7 +11,6 @@ function TechProvider({ children }) {
   const [modalUpdateOpen, setModalUpdateOpen] = useState(false);
   const [idToUpdate, setIdToUpdate] = useState("");
   const [nameToShowInUpdateModal, setNameToShowInUpdateModal] = useState("");
-  const [techs, setTechs] = useState([]);
 
   function handleModalUpdateOpen() {
     setModalUpdateOpen(true);

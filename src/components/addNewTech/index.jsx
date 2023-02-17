@@ -37,7 +37,7 @@ function AddNewTech() {
           <div className="third__div">
             <label htmlFor="">Status</label>
             <select name="" id="" {...register("status")}>
-              <option value={null}>Escolha o status</option>
+              <option value={""}>Escolha o status</option>
               <option value="Iniciante">Iniciante</option>
               <option value="Intermediário">Intermediário</option>
               <option value="Avançado">Avançado</option>
