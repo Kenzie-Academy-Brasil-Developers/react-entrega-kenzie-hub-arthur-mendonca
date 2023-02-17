@@ -59,6 +59,11 @@ export const StyledDiv = styled.div`
     border-radius: 10px;
   }
 
+  .li__tech-div:hover {
+    filter: brightness(1.4);
+    transition: 0.3s;
+  }
+
   @media (min-width: 769px) {
     .tech__list {
       width: 60%;

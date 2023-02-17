@@ -6,14 +6,15 @@ function NavBar() {
 
   function logOff() {
     navigate("/");
-    localStorage.clear();
+    localStorage.removeItem("@token");
+    localStorage.removeItem("@userId");
   }
   return (
     <>
       <StyledPageWrapper>
         <StyledHeader>
           <h1>Kenzie Hub </h1>
-          <button type="button" onClick={logOff}>
+          <button type="button" onClick={logOff} className="exit__button">
             Sair
           </button>
         </StyledHeader>

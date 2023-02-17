@@ -3,11 +3,14 @@ import { StyledHeader } from "./login";
 import { StyledPageWrapper } from "./login";
 import { StyledSection } from "./login";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { loginFormSchema } from "./formResolver";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { UserContext } from "../../context/userContext/userContext";
 
-function Login({ loginUser }) {
+function Login() {
+  const { loginUser } = useContext(UserContext);
+
   const {
     register,
     handleSubmit,

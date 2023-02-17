@@ -21,11 +21,16 @@ export const StyledHeader = styled.header`
   align-items: center;
   padding-bottom: 3rem;
 
-  button {
+  .exit__button {
     background-color: var(--grey2);
     color: white;
     padding: 1rem 1.8rem;
     border-radius: 10px;
     border: none;
+  }
+
+  .exit__button:hover {
+    opacity: 0.6;
+    transition: 0.2s;
   }
 `;

@@ -3,12 +3,12 @@ import Header from "../dashboardHeader";
 import { StyledPageWrapper } from "./dashboard";
 import MainColumn from "../mainColumn";
 
-function Dashboard({ user }) {
+function Dashboard() {
   return (
     <StyledPageWrapper>
       <NavBar />
-      <Header user={user} />
-      <MainColumn user={user} />
+      <Header />
+      <MainColumn />
     </StyledPageWrapper>
   );
 }

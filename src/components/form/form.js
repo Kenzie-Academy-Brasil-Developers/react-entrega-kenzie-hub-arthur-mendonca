@@ -65,6 +65,7 @@ export const StyledDiv = styled.div`
       margin-top: 1.5rem;
       width: 100%;
       height: 5rem;
+      cursor: pointer;
     }
 
     button:hover {

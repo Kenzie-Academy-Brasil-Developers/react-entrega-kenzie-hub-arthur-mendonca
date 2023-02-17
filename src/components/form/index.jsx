@@ -2,8 +2,12 @@ import { StyledDiv } from "./form";
 import { useForm } from "react-hook-form";
 import { formSchema } from "./formschema";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useContext } from "react";
+import { UserContext } from "../../context/userContext/userContext";
 
-function RegisterForm({ registerUSer }) {
+function RegisterForm() {
+  const { registerUSer } = useContext(UserContext);
+
   const {
     register,
     handleSubmit,

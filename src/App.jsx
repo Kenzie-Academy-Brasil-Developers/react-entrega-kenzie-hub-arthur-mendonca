@@ -6,33 +6,21 @@ import Login from "./components/login";
 import Register from "./components/register";
 import Dashboard from "./components/dashboard";
 import { api } from "./services/api";
+import ProtectedRoute from "./components/protectedRoute";
+import UserProvider from "./context/userContext/userContext";
 
 function App() {
-  const navigate = useNavigate();
-  const [user, setUser] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  async function loginUser(formData) {
-    try {
-      const response = await api.post("/sessions", formData);
-      console.log(response.data);
-      localStorage.setItem("@token", JSON.stringify(response.data.token));
-      localStorage.setItem("@userId", JSON.stringify(response.data.user.id));
-      setUser([]);
-      setUser(response.data.user);
-      navigate("/dashboard");
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
   return (
     <div className="App">
       <Globalstyle />
       <Routes>
-        <Route path="/" element={<Login loginUser={loginUser} />} />
+        <Route path="/" element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="dashboard" element={<Dashboard user={user} />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Route>
       </Routes>
     </div>
   );
