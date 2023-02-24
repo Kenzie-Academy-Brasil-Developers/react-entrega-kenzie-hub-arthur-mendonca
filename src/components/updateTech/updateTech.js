@@ -6,7 +6,7 @@ export const UpdateModal = styled.div`
   z-index: 10;
   width: 100vw;
   height: 100vh;
-  background-color: #f4f4f4b0;
+  background-color: #131313b0;
   display: flex;
   justify-content: center;
 

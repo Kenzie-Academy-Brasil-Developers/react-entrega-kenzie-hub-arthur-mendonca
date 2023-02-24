@@ -52,15 +52,14 @@ export const StyledDiv = styled.div`
     flex-direction: row;
     width: 70vw;
     justify-content: space-between;
-    /* width: 100%; */
-    padding: 1rem;
-    font-size: 1.5rem;
-    background-color: var(--grey2);
+    padding: 2rem;
+    font-size: 1.2rem;
+    background-color: var(--grey0);
     border-radius: 10px;
   }
 
   .li__tech-div:hover {
-    filter: brightness(1.4);
+    background-color: var(--grey2);
     transition: 0.3s;
   }
 
@@ -71,6 +70,7 @@ export const StyledDiv = styled.div`
 
     .li__tech-div {
       width: inherit;
+      font-size: 1.5rem;
     }
   }
 `;
