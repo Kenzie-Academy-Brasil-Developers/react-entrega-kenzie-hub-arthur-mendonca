@@ -9,7 +9,7 @@ import { UserContext } from "../userContext/userContext";
 export const TechContext = createContext();
 
 function TechProvider({ children }) {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const [open, setOpen] = useState(false);
   const [modalUpdateOpen, setModalUpdateOpen] = useState(false);
   const [idToUpdate, setIdToUpdate] = useState("");
@@ -38,6 +38,14 @@ function TechProvider({ children }) {
         },
       });
       ToastySuccess();
+
+      // setUser() --> para atualizar os dados do usuário
+      setUser((prevUser) => ({
+        ...prevUser,
+        techs: [...prevUser.techs, response.data],
+      }));
+
+      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -48,11 +56,17 @@ function TechProvider({ children }) {
     try {
       const response = await api.put(`/users/techs/${idToUpdate}`, formData, {
         headers: {
-          "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
       });
       ToastUpdate();
+      const updated = response.data;
+      setUser((prevUser) => ({
+        ...prevUser,
+        techs: prevUser.techs.map((tech) =>
+          tech.id === idToUpdate ? updated : tech
+        ),
+      }));
     } catch (error) {
       console.log(error);
     }
@@ -63,11 +77,14 @@ function TechProvider({ children }) {
     try {
       const response = await api.delete(`/users/techs/${idToUpdate}`, {
         headers: {
-          "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
       });
       ToastDelete();
+      setUser((prevUser) => ({
+        ...prevUser,
+        techs: prevUser.techs.filter((tech) => tech.id !== idToUpdate),
+      }));
     } catch (error) {
       console.log(error);
     }
